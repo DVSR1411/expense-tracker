@@ -22,7 +22,7 @@ services:
 
   mysqldb:
     container_name: backend
-    image: mysql:8.0.40
+    image: public.ecr.aws/docker/library/mysql:8.0.40
     ports:
       - 3306:3306
     environment:
