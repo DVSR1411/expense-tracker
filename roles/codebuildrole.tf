@@ -68,7 +68,7 @@ resource "aws_iam_role_policy" "codebuild_policy" {
         Action = [
           "sts:AssumeRole"
         ]
-        Resource = "arn:aws:iam::account:role/*"
+        Resource = aws_iam_role.CodeBuildServiceRole.arn
       }
     ]
   })
