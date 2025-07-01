@@ -19,11 +19,6 @@ resource "aws_iam_role_policy" "codebuild_policy" {
     Statement = [
       {
         Effect = "Allow"
-        Action = "eks:Describe*"
-        Resource = "*"
-      },
-      {
-        Effect = "Allow"
         Action = [
           "ec2:CreateNetworkInterface",
           "ec2:DescribeDhcpOptions",
