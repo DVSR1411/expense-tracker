@@ -82,6 +82,7 @@ def add_expense():
                     (session['user_id'], float(amount), category, description, date))
         get_db().commit()
         cur.close()
+        flash('Expense added successfully')
         return redirect('/dashboard')
     return render_template('add_expense.html')
 
