@@ -32,10 +32,9 @@ kind: Service
 metadata:
   name: flaskapp
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 5000
   selector:
     app: flaskapp
-  sessionAffinity: ClientIP  

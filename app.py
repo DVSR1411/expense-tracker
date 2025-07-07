@@ -1,17 +1,18 @@
 from flask import *
 from flask_mysqldb import MySQL
 import os
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import io
 import base64
-import datetime
 
 app = Flask(__name__)
-app.secret_key = os.urandom(8)
-app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST','localhost')
+app.secret_key = 'mysecretkey'
+app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST','127.0.0.1')
 app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER','root')
 app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD','')
-app.config['MYSQL_DB'] = os.environ.get('MYSQL_DATABASE','mysql')
+app.config['MYSQL_DB'] = os.environ.get('MYSQL_DATABASE','mydb')
 
 mysql = MySQL(app)
 def get_db():
@@ -110,4 +111,4 @@ def logout():
     return redirect('/login')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=8000)
