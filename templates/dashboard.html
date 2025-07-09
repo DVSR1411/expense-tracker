@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
-{% block title %}Dashboard - Budget Tracker{% endblock %}
+{% block title %}Dashboard - Expense Tracker{% endblock %}
 {% block content %}
 <div class="container mt-4">
-    <h2 class="text-center mb-4">Welcome to Your Budget Dashboard</h2>
+    <h2 class="text-center mb-4">Welcome to Your Expense Dashboard</h2>
     <div class="row mt-4">
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Add Expense</h5>
-                    <p class="card-text">Record a new expense in your budget tracker.</p>
+                    <p class="card-text">Record a new expense in your Expense tracker.</p>
                     <a href="{{ url_for('add_expense') }}" class="btn btn-primary">Add Expense</a>
                 </div>
             </div>
